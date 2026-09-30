@@ -60,28 +60,29 @@ def pattern(repeat=5):
 # Диаграмма процентного соотношения
 def sequence():
     file = open('sequence.txt', 'r')
-    module3 = []
-    others = []
+    nums = []
+    negative_nums = []
     for line in file:
         # Распределяем числа по условию
-        if -3 < float(line) < 3:
-            module3.append(float(line))
-        else:
-            others.append(float(line))
-    print(f'числа |a| < 3  {BLUE}{' ' * (len(module3) // 5)}{RESET}'
-          f'{len(module3) * 100 / (len(module3) + len(others))}%')
-    print(f'числа |a| >= 3 {WHITE}{' ' * (len(others) // 5)}{RESET}'
-          f'{len(others) * 100 / (len(module3) + len(others))}%')
+        if 5 < float(line) < 10:
+            nums.append(float(line))
+        elif -10 < float(line) < -5:
+            negative_nums.append(float(line))
+    print(f'числа от 5 до 10:  {BLUE}{' ' * (len(nums) // 5)}{RESET}'
+          f'{(len(nums) * 100 / (len(nums) + len(negative_nums))):.2f}%')
+    print(f'исла от -10 до -5: {WHITE}{' ' * (len(negative_nums) // 5)}{RESET}'
+          f'{(len(negative_nums) * 100 / (len(nums) + len(negative_nums))):.2f}%')
     file.close()
 
 
+# Функция
 def function():
     size = 24  # Размер графика (количество "клеток")
     graph_draw = ''  # Представим график в виде строки
     pixel = '  '
     for y in range(size, -1, -1):
-        # y = x/3 => x = 3y
-        x = 3 * y
+        # y = x/2 => x = 2y
+        x = 2 * y
         # Если полученный х поподает в размер графика, то пиксель, отвечающий за его у, будем рисовать синим
         if x < size:
             # Отметим значение на оси ОУ
@@ -97,6 +98,6 @@ def function():
 # loading()
 # pattern()
 # sequence()
-function()
+# function()
 
 # os.system("cls") - IDE идентифицирует как устаревший софт - ?
