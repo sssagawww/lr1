@@ -94,10 +94,10 @@ def function():
     print(graph_draw)
 
 
-# flag()
+#flag()
 # loading()
-# pattern()
-# sequence()
-# function()
+#pattern()
+#sequence()
+function()
 
 # os.system("cls") - IDE идентифицирует как устаревший софт - ?
