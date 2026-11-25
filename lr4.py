@@ -1,5 +1,6 @@
 from itertools import combinations
 
+
 # Создание таблицы для динамического программирования
 def get_table(n, cur_capacity, cur_items):
     dp = [[0 for _ in range(cur_capacity + 1)] for _ in range(n + 1)]
@@ -57,8 +58,6 @@ def print_result(cur_capacity, cur_cols):
             print()
 
     print('\nИтоговые очки выживания: ', points)
-
-
 
 
 items = [('r', 3, 25),
